@@ -25,5 +25,4 @@ require("lazy").setup({
     },
 })
 
---require("theme")
 require("misc")
