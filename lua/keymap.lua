@@ -35,7 +35,7 @@ return {
             ["<A-Right>"] = { vim.cmd.BufferLineCycleNext, "Next buffer" },
         },
         opts = {
-            mode = {"n", "i"}
-        }
-    }
+            mode = { "n", "i" },
+        },
+    },
 }
