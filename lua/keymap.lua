@@ -31,6 +31,8 @@ return {
     },
     {
         mappings = {
+            ["<C-s>"] = { vim.cmd.w, "Save file" },
+            ["<C-S-s>"] = { vim.cmd.wa, "Save all files" },
             ["<A-Left>"] = { vim.cmd.BufferLineCyclePrev, "Prevoius buffer" },
             ["<A-Right>"] = { vim.cmd.BufferLineCycleNext, "Next buffer" },
         },
