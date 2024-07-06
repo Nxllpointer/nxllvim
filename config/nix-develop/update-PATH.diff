@@ -1,0 +1,24 @@
+diff '--color=auto' -ruN a/plugin/nix-develop.lua b/plugin/nix-develop.lua
+--- a/plugin/nix-develop.lua	2024-06-23 17:55:49.847183965 +0200
++++ b/plugin/nix-develop.lua	2024-06-23 17:56:54.731054130 +0200
+@@ -1,17 +1,20 @@
+ vim.api.nvim_create_user_command("NixDevelop", function(ctx)
+   require("nix-develop").nix_develop(vim.tbl_map(vim.fn.expand, ctx.fargs))
++  vim.env.PATH = os.getenv("PATH")
+ end, {
+   nargs = "*",
+ })
+ 
+ vim.api.nvim_create_user_command("NixShell", function(ctx)
+   require("nix-develop").nix_shell(vim.tbl_map(vim.fn.expand, ctx.fargs))
++  vim.env.PATH = os.getenv("PATH")
+ end, {
+   nargs = "*",
+ })
+ 
+ vim.api.nvim_create_user_command("RiffShell", function(ctx)
+   require("nix-develop").riff_shell(vim.tbl_map(vim.fn.expand, ctx.fargs))
++  vim.env.PATH = os.getenv("PATH")
+ end, {
+   nargs = "*",
+ })
