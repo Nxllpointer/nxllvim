@@ -100,7 +100,7 @@
     }
     {
       mode = "n";
-      key = "<Leader>csr";
+      key = "<Leader>csR";
       action.__raw = "vim.lsp.buf.references";
       options.desc = "Show References";
     }
@@ -158,7 +158,7 @@
     enable = true;
     registrations = {
       "<Leader>c" = { name = "Code"; };
-      "<Leader>cd" = { name = "Goto"; };
+      "<Leader>cs" = { name = "Symbol"; };
     };
   };
 
