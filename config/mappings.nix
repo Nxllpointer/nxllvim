@@ -9,19 +9,19 @@
 
   keymaps = [
     {
-      mode = [ "n" "i" ];
+      mode = [ "" "i" ];
       key = "<C-s>";
       action.__raw = "vim.cmd.w";
       options.desc = "Save File";
     }
     {
-      mode = [ "n" "i" ];
+      mode = [ "" "i" ];
       key = "<C-S-s>";
       action.__raw = "vim.cmd.wa";
       options.desc = "Save All Files";
     }
     {
-      mode = [ "n" "i" ];
+      mode = [ "" "i" ];
       key = "<C-q>";
       action = luaFn "vim.lsp.buf.hover(); vim.lsp.buf.hover()";
       options.desc = "Hover";
@@ -51,7 +51,7 @@
       options.desc = "Open/Focus File-Tree";
     }
     {
-      mode = "n";
+      mode = "";
       key = "<Leader>ca";
       action.__raw = "vim.lsp.buf.code_action";
       options.desc = "Code Action";
@@ -105,7 +105,7 @@
       options.desc = "Show References";
     }
     {
-      mode = "n";
+      mode = "";
       key = "<Leader>cf";
       action.__raw = "vim.lsp.buf.format";
       options.desc = "Format Code";
