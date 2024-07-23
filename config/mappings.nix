@@ -64,45 +64,51 @@
     }
     {
       mode = "n";
-      key = "<Leader>csd";
-      action.__raw = "vim.lsp.buf.definition";
-      options.desc = "Go To Definition";
+      key = "<Leader>csD";
+      action = luaFn ''vim.cmd.Telescope("lsp_definitions")'';
+      options.desc = "Definitions";
     }
     {
       mode = "n";
-      key = "<Leader>csD";
+      key = "<Leader>csd";
       action.__raw = "vim.lsp.buf.declaration";
-      options.desc = "Go To Declaration";
+      options.desc = "Declaration";
     }
     {
       mode = "n";
       key = "<Leader>csi";
-      action.__raw = "vim.lsp.buf.implementation";
-      options.desc = "List Implementations";
+      action = luaFn ''vim.cmd.Telescope("lsp_implementations")'';
+      options.desc = "Implementations";
     }
     {
       mode = "n";
       key = "<Leader>csc";
-      action.__raw = "vim.lsp.buf.incoming_calls";
-      options.desc = "List Incoming Calls";
+      action= luaFn ''vim.cmd.Telescope("lsp_incoming_calls")'';
+      options.desc = "Incoming Calls";
     }
     {
       mode = "n";
       key = "<Leader>csC";
-      action.__raw = "vim.lsp.buf.outgoing_calls";
-      options.desc = "List Outgoing Calls";
+      action= luaFn ''vim.cmd.Telescope("lsp_outgoing_calls")'';
+      options.desc = "Outgoing Calls";
     }
     {
       mode = "n";
       key = "<Leader>cst";
+      action= luaFn ''vim.cmd.Telescope("lsp_type_definitions")'';
+      options.desc = "Type";
+    }
+    {
+      mode = "n";
+      key = "<Leader>csT";
       action.__raw = "vim.lsp.buf.typehierarchy";
-      options.desc = "Show Type-Hierarchy";
+      options.desc = "Type-Hierarchy";
     }
     {
       mode = "n";
       key = "<Leader>csR";
-      action.__raw = "vim.lsp.buf.references";
-      options.desc = "Show References";
+      action= luaFn ''vim.cmd.Telescope("lsp_references")'';
+      options.desc = "References";
     }
     {
       mode = "";
