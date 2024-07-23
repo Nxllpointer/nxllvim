@@ -137,8 +137,8 @@
 
   plugins.cmp.settings.mapping = {
     "<C-Space>" = "cmp.mapping.complete()";
-    "<Up>" = "cmp.mapping.select_prev_item()";
-    "<Down>" = "cmp.mapping.select_next_item()";
+    "<Up>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+    "<Down>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
     "<C-f>" = "cmp.mapping.scroll_docs(4)";
     "<C-b>" = "cmp.mapping.scroll_docs(-4)";
     "<C-e>" = "cmp.mapping.abort()";
