@@ -17,6 +17,7 @@
     ./lsp.nix
     ./cmp.nix
     ./diagnostics.nix
+    ./git.nix
   ];
 
   _module.args = {
