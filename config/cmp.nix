@@ -15,11 +15,8 @@
         };
 
         sorting.comparators = [
-          "cmp.config.compare.score"
-          "cmp.config.compare.kind"
+          "cmp.config.compare.sort_text" # This is how rust_analyzer provides completion score
         ];
-
-        preselect = "cmp.PreselectMode.None";
 
         experimental.ghost_text = true;
       };
