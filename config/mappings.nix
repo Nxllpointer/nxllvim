@@ -134,10 +134,30 @@
       action.__raw = "vim.cmd.stopinsert";
       options.desc = "Exit Terminal Mode";
     }
+    # Intellitab
     {
       mode = "i";
       key = "<Tab>";
       action.__raw = ''require("intellitab").indent'';
+    }
+    # Snippets
+    rec {
+      mode = ["s" "i"];
+      key = "<Tab>";
+      action = luaFn /* lua */ ''
+        if not vim.snippet.active() then return "${key}" end
+        vim.snippet.jump(1)
+      '';
+      options.expr = true;
+    }
+    rec {
+      mode = ["s" "i"];
+      key = "<S-Tab>";
+      action = luaFn /* lua */ ''
+        if not vim.snippet.active() then return "${key}" end
+        vim.snippet.jump(-1)
+      '';
+      options.expr = true;
     }
   ];
 
