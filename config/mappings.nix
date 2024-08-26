@@ -83,19 +83,19 @@
     {
       mode = "n";
       key = "<Leader>csc";
-      action= luaFn ''vim.cmd.Telescope("lsp_incoming_calls")'';
+      action = luaFn ''vim.cmd.Telescope("lsp_incoming_calls")'';
       options.desc = "Incoming Calls";
     }
     {
       mode = "n";
       key = "<Leader>csC";
-      action= luaFn ''vim.cmd.Telescope("lsp_outgoing_calls")'';
+      action = luaFn ''vim.cmd.Telescope("lsp_outgoing_calls")'';
       options.desc = "Outgoing Calls";
     }
     {
       mode = "n";
       key = "<Leader>cst";
-      action= luaFn ''vim.cmd.Telescope("lsp_type_definitions")'';
+      action = luaFn ''vim.cmd.Telescope("lsp_type_definitions")'';
       options.desc = "Type";
     }
     {
@@ -107,7 +107,7 @@
     {
       mode = "n";
       key = "<Leader>csR";
-      action= luaFn ''vim.cmd.Telescope("lsp_references")'';
+      action = luaFn ''vim.cmd.Telescope("lsp_references")'';
       options.desc = "References";
     }
     {
@@ -142,7 +142,7 @@
     }
     # Snippets
     rec {
-      mode = ["s" "i"];
+      mode = [ "s" "i" ];
       key = "<Tab>";
       action = luaFn /* lua */ ''
         if not vim.snippet.active() then return "${key}" end
@@ -151,7 +151,7 @@
       options.expr = true;
     }
     rec {
-      mode = ["s" "i"];
+      mode = [ "s" "i" ];
       key = "<S-Tab>";
       action = luaFn /* lua */ ''
         if not vim.snippet.active() then return "${key}" end
@@ -182,10 +182,10 @@
 
   plugins.which-key = {
     enable = true;
-    registrations = {
-      "<Leader>c" = { name = "Code"; };
-      "<Leader>cs" = { name = "Symbol"; };
-    };
+    settings.spec = map (with builtins; it: { __raw = ''{ "${elemAt it 0}", group = "${elemAt it 1}" }''; }) [
+      [ "<Leader>c" "Code" ]
+      [ "<Leader>cs" "Symbol" ]
+    ];
   };
 
 }

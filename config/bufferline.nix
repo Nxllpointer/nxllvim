@@ -1,7 +1,9 @@
 {
   plugins.bufferline = {
     enable = true;
-    alwaysShowBufferline = true;
-    separatorStyle = "slope";
+    settings.options = {
+      always_show_bufferline = true;
+      separator_style = "slope";
+    };
   };
 }
