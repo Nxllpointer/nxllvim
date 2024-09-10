@@ -2,6 +2,7 @@
   imports = [
     ./mappings.nix
     ./clipboard.nix
+    ./autochecktime.nix
     ./indent.nix
     ./autopairs.nix
     ./delimiters.nix
